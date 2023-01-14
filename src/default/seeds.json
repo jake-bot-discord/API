@@ -1,0 +1,171 @@
+{
+    "beterraba": {
+        "name": "Beterraba",
+        "purchasePrice": "10",
+        "sellPrice": "18",
+        "growthTime": 2,
+        "emoji": {
+            "shortId": "1054107777259274240",
+            "fullId": "<:JakeBeterraba:1054107777259274240>",
+            "link": "https://jakebot.com.br/images/bot/beterraba.png"
+        }
+    },
+
+    "cenoura": {
+        "name": "Cenoura",
+        "purchasePrice": "8",
+        "sellPrice": "14",
+        "growthTime": 3,
+        "emoji": {
+            "shortId": "1054107774545571900",
+            "fullId": "<:JakeCenoura:1054107774545571900>",
+            "link": "https://jakebot.com.br/images/bot/cenoura.png"
+        }
+    },
+
+    "batata": {
+        "name": "Batata",
+        "purchasePrice": "12",
+        "sellPrice": "18",
+        "growthTime": 4,
+        "emoji": {
+            "shortId": "1054107772041576458",
+            "fullId": "<:JakeBatata:1054107772041576458>",
+            "link": "https://jakebot.com.br/images/bot/batata.png"
+        }
+    },
+
+    "alface": {
+        "name": "Alface",
+        "purchasePrice": "20",
+        "sellPrice": "34",
+        "growthTime": 3,
+        "emoji": {
+            "shortId": "1054107714713821204",
+            "fullId": "<:JakeAlface:1054107714713821204>",
+            "link": "https://jakebot.com.br/images/bot/alface.png"
+        }
+    },
+
+    "lupulo": {
+        "name": "Lupulo",
+        "purchasePrice": "50",
+        "sellPrice": "70",
+        "growthTime": 5,
+        "emoji": {
+            "shortId": "1054107712331468910",
+            "fullId": "<:JakeLupulo:1054107712331468910>",
+            "link": "https://jakebot.com.br/images/bot/lupulo.png"
+        }
+    },
+
+    "abacaxi": {
+        "name": "Abacaxi",
+        "purchasePrice": "25",
+        "sellPrice": "32",
+        "growthTime": 2,
+        "emoji": {
+            "shortId": "1054107710414655548",
+            "fullId": "<:JakeAbacaxi:1054107710414655548>",
+            "link": "https://jakebot.com.br/images/bot/abacaxi.png"
+        }
+    },
+
+    "tomate": {
+        "name": "Tomate",
+        "purchasePrice": "30",
+        "sellPrice": "42",
+        "growthTime": 3,
+        "emoji": {
+            "shortId": "1054107707692560424",
+            "fullId": "<:JakeTomate:1054107707692560424>",
+            "link": "https://jakebot.com.br/images/bot/tomato.png"
+        }
+    },
+
+    "morango": {
+        "name": "Morango",
+        "purchasePrice": "100",
+        "sellPrice": "180",
+        "growthTime": 6,
+        "emoji": {
+            "shortId": "1054107704597168139",
+            "fullId": "<:JakeMorango:1054107704597168139>",
+            "link": "https://jakebot.com.br/images/bot/morango.png"
+        }
+    },
+
+    "mandioca": {
+        "name": "Mandioca",
+        "purchasePrice": "10",
+        "sellPrice": "22",
+        "growthTime": 3,
+        "emoji": {
+            "shortId": "1054107702592294992",
+            "fullId": "<:JakeMandioca:1054107702592294992>",
+            "link": "https://jakebot.com.br/images/bot/mandioca.png"
+        }
+    },
+
+    "cebola": {
+        "name": "Cebola",
+        "purchasePrice": "24",
+        "sellPrice": "32",
+        "growthTime": 2,
+        "emoji": {
+            "shortId": "1054107700616773662",
+            "fullId": "<:JakeCebola:1054107700616773662>",
+            "link": "https://jakebot.com.br/images/bot/cebola.png"
+        }
+    },
+
+    "capim": {
+        "name": "Capim",
+        "purchasePrice": "10",
+        "sellPrice": "2",
+        "growthTime": 1,
+        "emoji": {
+            "shortId": "1054107698771267735",
+            "fullId": "<:JakeCapim:1054107698771267735>",
+            "link": "https://jakebot.com.br/images/bot/capim.png"
+        }
+    },
+
+    "trigo": {
+        "name": "Trigo",
+        "purchasePrice": "18",
+        "sellPrice": "30",
+        "growthTime": 2,
+        "emoji": {
+            "shortId": "1054107697085169796",
+            "fullId": "<:JakeTrigo:1054107697085169796>",
+            "link": "https://jakebot.com.br/images/bot/trigo.png"
+        }
+    },
+
+    "fertilizantes": {
+        "1": {
+            "type": "pequeno",
+            "size": "3",
+            "purchasePrice": "30"
+        },
+
+        "2": {
+            "type": "médio",
+            "size": "6",
+            "purchasePrice": "60"
+        },
+        
+        "3": {
+            "type": "grande",
+            "size": "9",
+            "purchasePrice": "90"
+        },
+
+        "emoji": {
+            "shortId": "1054096796609171517",
+            "fullId": "<:JakeFertilizante:1054096796609171517>",
+            "link": "https://jakebot.com.br/images/bot/fertilizante.png"
+        }
+    }
+}
