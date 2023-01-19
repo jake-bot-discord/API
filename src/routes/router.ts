@@ -1,8 +1,5 @@
 import { app } from "../index";
-import { readFileSync } from "fs"
 import { formater } from "../util/formater";
-import { APIAttachment, APIEmbed, Attachment, AttachmentBuilder, AttachmentPayload, BufferResolvable, JSONEncodable, WebhookClient } from "discord.js";
-import { Stream } from "node:stream";
 import { itemdata } from "./itemdata";
 
 app.get('/', (req, res) => {
@@ -25,3 +22,10 @@ app.post('/sharderror', (req, res) => {
     return formater(req.body, res)
 })
 
+// app.route('/host')
+//     .post((req, res) => {
+//         if (req.headers.authorization !== process.env.WEBHOOKS_PASSWORD)
+//             return res.status(401).send('Acesso negado!')
+
+        
+//     })
