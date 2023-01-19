@@ -1,3 +1,4 @@
+import { discloudVerifier } from "./functions/discloudStatus";
 import Express from "express";
 import "dotenv/config"
 import "colors"
@@ -10,6 +11,7 @@ try {
     app.listen(process.env.PORT, () => {
         console.clear()
         console.log("[SISTEMA]".blue, `API online na porta ${process.env.PORT} 🚀`)
+        discloudVerifier()
     })
 } catch (err) {
     console.log("[SISTEMA]".red, "Houve um erro ao iniciar a API! \n", err)

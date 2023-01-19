@@ -22,8 +22,6 @@ export const formater = async (
     res: Response
 ) => {
 
-    console.log(url, username, avatarURL, content, embeds, files)
-
     if (!url) return res.status(500).send("URL missing")
 
     const webhook = new WebhookClient({ url })
