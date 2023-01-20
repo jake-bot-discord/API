@@ -1,6 +1,8 @@
 import axios from "axios"
 import { EmbedBuilder, WebhookClient } from "discord.js"
 
+export let hostStatus: any
+
 export async function discloudVerifier() {
     console.log("[STATUS]".blue, `Iniciando api de status na porta ${process.env.PORT} 🚀`)
 
@@ -13,6 +15,8 @@ export async function discloudVerifier() {
             }
         )
 
+        hostStatus = discloudStatus
+
         const webhookClient = new WebhookClient({
             url: `${process.env.STATUSCHAT_WEBHOOK}`
         })
@@ -20,8 +24,8 @@ export async function discloudVerifier() {
         if (discloudStatus.data.apps.container == "Online") {
             const statusEmbed = new EmbedBuilder()
                 .setColor("#66cd00")
-                .setTitle("O Jake esta oline e a todo vapor!")
-                .setDescription("Atualemente o Jake esta online e a todo vapor! Caso tenha algum problema, reporte-o em <#974474382154010644>")
+                .setTitle("O Jake está online e a todo vapor!")
+                .setDescription("Atualmente o Jake está online e a todo vapor! Caso tenha algum problema, reporte-o em <#974474382154010644>")
                 .addFields(
                     {
                         name: "<:JakeRelogio:1027332951932928170> Atualizado:",
@@ -48,8 +52,8 @@ export async function discloudVerifier() {
         } else {
             const statusEmbed = new EmbedBuilder()
                 .setColor("#e03131")
-                .setTitle("O Jake esta ocupado no momento!")
-                .setDescription("Atualemente o Jake esta ocupado arrumando a casa e se preparando para atende-los! Caso tenha algum problema, reporte-o em <#974474382154010644>")
+                .setTitle("O Jake está ocupado no momento!")
+                .setDescription("Atualmente o Jake está ocupado arrumando a casa e se preparando para atende-los! Caso tenha algum problema, reporte-o em <#974474382154010644>")
                 .addFields(
                     {
                         name: "<:JakeRelogio:1027332951932928170> Atualizado:",
