@@ -1,6 +1,7 @@
 import { app } from "../index";
 import { formater } from "../util/formater";
 import { itemdata } from "./itemdata";
+import { HostTurnOff, HostTurnOn } from "./host";
 
 app.get('/', (req, res) => {
     res.status(200)
@@ -22,10 +23,16 @@ app.post('/sharderror', (req, res) => {
     return formater(req.body, res)
 })
 
-// app.route('/host')
-//     .post((req, res) => {
-//         if (req.headers.authorization !== process.env.WEBHOOKS_PASSWORD)
-//             return res.status(401).send('Acesso negado!')
+app.post('/host/ligar', (req, res) => {
+    if (req.headers.authorization !== process.env.HOST_PASSWORD)
+        return res.status(401).send('Acesso negado!')
 
-        
-//     })
+    return HostTurnOn(req, res)
+})
+
+app.post('/host/desligar', (req, res) => {
+    if (req.headers.authorization !== process.env.HOST_PASSWORD)
+        return res.status(401).send('Acesso negado!')
+
+    return HostTurnOff(req, res)
+})

@@ -7,13 +7,13 @@ export async function discloudVerifier() {
     console.log("[STATUS]".blue, `Iniciando api de status na porta ${process.env.PORT} 🚀`)
 
     setInterval(async () => {
-        const discloudStatus = await axios.get("https://api.discloud.app/v2/app/1674160034718/status",
+        const discloudStatus = await axios.get("https://api.discloud.app/v2/app/1674608474006/status",
             {
                 headers: {
                     "api-token": process.env.DISCLOUD_API_TOKEN
                 }
             }
-        ).catch(() => null)
+        ).catch(() => {})
 
         hostStatus = discloudStatus
 
@@ -21,7 +21,7 @@ export async function discloudVerifier() {
             url: `${process.env.STATUSCHAT_WEBHOOK}`
         })
 
-        if (discloudStatus && discloudStatus.data.apps.container == "Online") {
+        if (discloudStatus?.data.apps.container == "Online") {
             const statusEmbed = new EmbedBuilder()
                 .setColor("#66cd00")
                 .setTitle("O Jake está online e a todo vapor!")
