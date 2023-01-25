@@ -4,7 +4,7 @@ import { EmbedBuilder, WebhookClient } from "discord.js"
 export let hostStatus: any
 
 export async function discloudVerifier() {
-    console.log("[STATUS]".blue, `Iniciando api de status na porta ${process.env.PORT} 🚀`)
+    console.log("[STATUS]".green, `Iniciando api de status na porta ${process.env.PORT} 🚀`)
 
     setInterval(async () => {
         const discloudStatus = await axios.get("https://api.discloud.app/v2/app/1674608474006/status",
