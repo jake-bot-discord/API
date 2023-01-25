@@ -13,7 +13,7 @@ export async function discloudVerifier() {
                     "api-token": process.env.DISCLOUD_API_TOKEN
                 }
             }
-        )
+        ).catch(() => null)
 
         hostStatus = discloudStatus
 
@@ -21,7 +21,7 @@ export async function discloudVerifier() {
             url: `${process.env.STATUSCHAT_WEBHOOK}`
         })
 
-        if (discloudStatus.data.apps.container == "Online") {
+        if (discloudStatus && discloudStatus.data.apps.container == "Online") {
             const statusEmbed = new EmbedBuilder()
                 .setColor("#66cd00")
                 .setTitle("O Jake está online e a todo vapor!")
