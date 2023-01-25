@@ -1,3 +1,4 @@
+import { apiStatusOn } from "./functions/apiStatus";
 import { discloudVerifier } from "./functions/discloudStatus";
 import { discloud } from "discloud.app"
 import Express from "express";
@@ -22,3 +23,6 @@ try {
 }
 
 import "./routes/router"
+
+//enviando mensagem de aviso
+apiStatusOn()
