@@ -17,12 +17,15 @@ try {
         console.log("[SISTEMA]".blue, `API online na porta ${process.env.PORT} 🚀`)
         discloudVerifier()
         import("./functions/discordClient")
+        import("./database/connect")
+        Metrics()
     })
 } catch (err) {
     console.log("[SISTEMA]".red, "Houve um erro ao iniciar a API! \n", err)
 }
 
 import "./routes/router"
+import { Metrics } from "./analytics";
 
 //enviando mensagem de aviso
 apiStatusOn()
