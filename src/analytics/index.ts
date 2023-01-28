@@ -11,7 +11,7 @@ export async function Metrics() {
     //iniciando o coletor de dados
     setInterval(async () => {
         await editMetricsData()
-    }, 1000 * 30)
+    }, 1000 * 60 * 60)
 
     const defaultRelatoryData = {
         "date": 0,
