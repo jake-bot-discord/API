@@ -4,8 +4,6 @@ import { EmbedBuilder, WebhookClient } from "discord.js"
 export let hostStatus: any
 
 export async function discloudVerifier() {
-    console.log("[STATUS]".green, `Iniciando api de status na porta ${process.env.PORT} 🚀`)
-
     setInterval(async () => {
         const discloudStatus = await axios.get("https://api.discloud.app/v2/app/1674608474006/status",
             {
@@ -38,10 +36,10 @@ export async function discloudVerifier() {
                         inline: true
                     }
                 )
-                .setThumbnail("https://jakebot.com.br/images/api/satelite.png")
+                .setThumbnail("https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png")
                 .setFooter({
                     text: "Jake Bot",
-                    iconURL: "https://jakebot.com.br/images/iconJake.png"
+                    iconURL: "https://jake-website-ybabyzinha.vercel.app/images/iconJake.png"
                 })
 
             await webhookClient.editMessage(`${process.env.STATUS_MESSAGE_ID}`, {
@@ -66,10 +64,10 @@ export async function discloudVerifier() {
                         inline: true
                     }
                 )
-                .setThumbnail("https://jakebot.com.br/images/api/satelite.png")
+                .setThumbnail("https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png")
                 .setFooter({
                     text: "Jake Bot",
-                    iconURL: "https://jakebot.com.br/images/iconJake.png"
+                    iconURL: "https://jake-website-ybabyzinha.vercel.app/images/iconJake.png"
                 })
 
             await webhookClient.editMessage(`${process.env.STATUS_MESSAGE_ID}`, {

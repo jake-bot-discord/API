@@ -1,7 +1,7 @@
 import { EmbedBuilder, WebhookClient } from "discord.js";
 
 export const apiStatusOn = () => {
-    const webhookClient = new WebhookClient({ url: 'https://discord.com/api/webhooks/1067903741325492254/h-weqvX-cd9UtSMK1XCIfnHFBM842d-D19GH4hs8mQ4mfM5Ix94Zt5Ny0vX0Lz5DB18p' });
+    const webhookClient = new WebhookClient({ url: 'https://discord.com/api/webhooks/1083890487099936829/SJrv1FnjZf1DTJMCm3n4Zzk9rfE8eR0AWHfeidPLX0psPigj76DTgDYcKuGCJ0YV07BG' });
 
     const readyApiEmbed = new EmbedBuilder()
         .setColor("#ffc400")
@@ -14,13 +14,13 @@ export const apiStatusOn = () => {
             },
 
         )
-        .setThumbnail("https://jakebot.com.br/images/api/satelite.png")
-        .setFooter({ text: "API Jake-Bot", iconURL: "https://jakebot.com.br/images/api/satelite.png" })
+        .setThumbnail("https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png")
+        .setFooter({ text: "API Jake-Bot", iconURL: "https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png" })
 
 
     webhookClient.send({
         username: "Monitor - API",
-        avatarURL: "https://jakebot.com.br/images/api/satelite.png",
+        avatarURL: "https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png",
         embeds: [readyApiEmbed.toJSON()]
     })
 }

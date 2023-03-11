@@ -6,9 +6,6 @@ const cron = require("node-cron")
 import metricModel from "../database/schemas/metricSchema"
 
 export async function Metrics() {
-    console.log("[ANALYTICS]".blue, "Iniciando as metricas")
-
-    //iniciando o coletor de dados
     setInterval(async () => {
         await editMetricsData()
     }, 1000 * 60 * 60)
