@@ -1,7 +1,7 @@
 import { EmbedBuilder, WebhookClient } from "discord.js";
 
 export const apiStatusOn = () => {
-    const webhookClient = new WebhookClient({ url: 'https://discord.com/api/webhooks/1083890487099936829/SJrv1FnjZf1DTJMCm3n4Zzk9rfE8eR0AWHfeidPLX0psPigj76DTgDYcKuGCJ0YV07BG' });
+    const webhookClient = new WebhookClient({ url: `${process.env.STATUSCHAT_WEBHOOK}` });
 
     const readyApiEmbed = new EmbedBuilder()
         .setColor("#ffc400")
