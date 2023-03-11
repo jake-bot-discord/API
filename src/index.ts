@@ -9,19 +9,52 @@ export const app = Express()
 
 app.use(Express.json())
 
-discloud.login(process.env.DISCLOUD_API_TOKEN).then(() => console.log("[DISCLOUD]".blue, "Conectado a discloud"))
+discloud.login(process.env.DISCLOUD_API_TOKEN)
 
 try {
     app.listen(process.env.PORT, () => {
         console.clear()
-        console.log("[SISTEMA]".blue, `API online na porta ${process.env.PORT} 🚀`)
+
+        console.log("✔".green, `API online na porta ${process.env.PORT} 🚀`)
+
         discloudVerifier()
+            .catch(err => {
+                console.log("❌".red, "Houve um erro ao iniciado o verificador de status do Jake")
+                console.log("\n")
+                console.log(err)
+                return
+            })
+            .then(() => console.log("✔".green, `Verificador de status do Jake iniciado`))
+
         import("./functions/discordClient")
+            .catch(err => {
+                console.log("❌".red, "Houve um erro ao conectar com o discord")
+                console.log("\n")
+                console.log(err)
+                return
+            })
+            .then(() => console.log("✔".green, `API conectada ao discord com sucesso`))
+
         import("./database/connect")
+            .catch(err => {
+                console.log("❌".red, "Houve um erro ao conectar com a database")
+                console.log("\n")
+                console.log(err)
+                return
+            })
+            .then(() => console.log("✔".green, `API conectada a database com sucesso`))
+
         Metrics()
+            .catch(err => {
+                console.log("❌".red, "Houve um erro ao iniciar as métricas do Jake")
+                console.log("\n")
+                console.log(err)
+                return
+            })
+            .then(() => console.log("✔".green, "Metricas iniciadas com sucesso"))
     })
 } catch (err) {
-    console.log("[SISTEMA]".red, "Houve um erro ao iniciar a API! \n", err)
+    console.log("i".red, "Houve um erro ao iniciar a API! \n", err)
 }
 
 import "./routes/router"
