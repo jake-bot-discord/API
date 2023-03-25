@@ -17,6 +17,7 @@ try {
 
         console.log("✔".green, `API online na porta ${process.env.PORT} 🚀`)
 
+        //descomentar quando for enviado para a discloud
         discloudVerifier()
             .catch(err => {
                 console.log("❌".red, "Houve um erro ao iniciado o verificador de status do Jake")

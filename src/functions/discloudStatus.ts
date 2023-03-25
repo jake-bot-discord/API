@@ -5,13 +5,13 @@ export let hostStatus: any
 
 export async function discloudVerifier() {
     setInterval(async () => {
-        const discloudStatus = await axios.get("https://api.discloud.app/v2/app/1674608474006/status",
+        const discloudStatus = await axios.get("https://api.discloud.app/v2/app/1679532864907/status",
             {
                 headers: {
                     "api-token": process.env.DISCLOUD_API_TOKEN
                 }
             }
-        ).catch(() => {})
+        ).catch(() => null)
 
         hostStatus = discloudStatus
 
