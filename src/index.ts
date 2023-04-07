@@ -7,7 +7,6 @@ import cors from "cors"
 import Express from "express";
 import store from "connect-mongo";
 import "dotenv/config"
-import "./routes/router"
 import "colors"
 
 require("./strategies/discord")
@@ -78,6 +77,8 @@ try {
 } catch (err) {
     console.log("i".red, "Houve um erro ao iniciar a API! \n", err)
 }
+
+import "./routes/router"
 
 //enviando mensagem de aviso
 apiStatusOn()
