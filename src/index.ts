@@ -11,6 +11,8 @@ import "colors"
 
 require("./strategies/discord")
 
+require("dotenv").config()
+
 export const app = Express()
 
 app.use(Express.json())
