@@ -1,13 +1,42 @@
 import { apiStatusOn } from "./functions/apiStatus";
 import { discloudVerifier } from "./functions/discloudStatus";
 import { discloud } from "discloud.app"
+import passport from "passport"
+import session from "express-session"
+import cors from "cors"
 import Express from "express";
+import store from "connect-mongo";
 import "dotenv/config"
 import "colors"
+
+require("./strategies/discord")
 
 export const app = Express()
 
 app.use(Express.json())
+app.use(Express.urlencoded())
+
+app.use(cors({
+    origin: ['http://localhost:8080'],
+    credentials: true
+}))
+
+app.use(
+    session({
+        secret: `${process.env.SESSION_SECRET}`,
+        resave: false,
+        saveUninitialized: false,
+        cookie: {
+            maxAge: 1000 * 60 * 60 * 24 * 2
+        },
+        store: store.create({
+            mongoUrl: process.env.MONGOOSE_DATABASE_URL
+        })
+    })
+)
+
+app.use(passport.initialize())
+app.use(passport.session())
 
 discloud.login(process.env.DISCLOUD_API_TOKEN)
 

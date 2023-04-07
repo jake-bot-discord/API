@@ -3,6 +3,8 @@ import { formater } from "../util/formater";
 import { itemdata } from "./itemdata";
 import { HostTurnOff, HostTurnOn } from "./host";
 import { Maintenance } from "./maintenance";
+import authRouter from "./auth/index"
+import guildsRouter from "./guilds/index"
 
 app.get('/', (req, res) => {
     res.status(200)
@@ -51,3 +53,7 @@ app.route('/maintenance')
 
         return Maintenance(req, res, "get")
     })
+
+app.use('/auth', authRouter)
+
+app.use('/guilds', guildsRouter)
