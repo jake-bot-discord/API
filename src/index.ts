@@ -7,6 +7,7 @@ import cors from "cors"
 import Express from "express";
 import store from "connect-mongo";
 import "dotenv/config"
+import "./routes/router"
 import "colors"
 
 require("./strategies/discord")
@@ -73,22 +74,10 @@ try {
                 return
             })
             .then(() => console.log("✔".green, `API conectada a database com sucesso`))
-
-        Metrics()
-            .catch(err => {
-                console.log("❌".red, "Houve um erro ao iniciar as métricas do Jake")
-                console.log("\n")
-                console.log(err)
-                return
-            })
-            .then(() => console.log("✔".green, "Metricas iniciadas com sucesso"))
     })
 } catch (err) {
     console.log("i".red, "Houve um erro ao iniciar a API! \n", err)
 }
-
-import "./routes/router"
-import { Metrics } from "./analytics";
 
 //enviando mensagem de aviso
 apiStatusOn()
