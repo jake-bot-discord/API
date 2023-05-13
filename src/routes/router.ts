@@ -2,7 +2,6 @@ import { app } from "../index";
 import { formater } from "../util/formater";
 import { itemdata } from "./itemdata";
 import { HostTurnOff, HostTurnOn } from "./host";
-import { Maintenance } from "./maintenance";
 import authRouter from "./auth/index"
 import guildsRouter from "./guilds/index"
 
@@ -39,20 +38,6 @@ app.post('/host/desligar', (req, res) => {
 
     return HostTurnOff(req, res)
 })
-
-app.route('/maintenance')
-    .post((req, res) => {
-        if (req.headers.authorization !== process.env.MAINTENANCE_PASSWORD)
-            return res.status(401).send('Acesso negado!')
-
-        return Maintenance(req, res, "post")
-    })
-    .get((req, res) => {
-        if (req.headers.authorization !== process.env.MAINTENANCE_PASSWORD)
-            return res.status(401).send('Acesso negado!')
-
-        return Maintenance(req, res, "get")
-    })
 
 app.use('/auth', authRouter)
 

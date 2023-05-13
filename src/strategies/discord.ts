@@ -31,7 +31,7 @@ passport.use(
         profile: Profile,
         done: VerifyCallback
     ) => {
-        const { id, username, email } = profile
+        const { id, username, email, avatar } = profile
 
         try {
             const existingUserData = await userModel.findByIdAndUpdate(
@@ -41,6 +41,7 @@ passport.use(
                 {
                     $set: {
                         "accessToken": accessToken,
+                        "avatar": avatar,
                         "refreshToken": refreshToken,
                         "name": username,
                         "email": email
@@ -57,7 +58,8 @@ passport.use(
                 _id: id,
                 email: email,
                 accessToken: accessToken,
-                refreshToken: refreshToken
+                refreshToken: refreshToken,
+                avatar: avatar
             })
 
             const savedNewUser = await newUserData.save()

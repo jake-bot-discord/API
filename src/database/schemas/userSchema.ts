@@ -4,6 +4,7 @@ export interface userModel {
     id: String,
     email: String,
     name: String,
+    avatar: String
     accessToken: String,
     refreshToken: String
 }
@@ -13,6 +14,7 @@ const userSchema = new mongoose.Schema({
     email: { type: String, acquired: true },
     name: { type: String, acquired: true },
     accessToken: { type: String, acquired: true },
+    avatar: { type: String, default: null },
     refreshToken: { type: String, acquired: true },
     married: {
         with: { type: String, default: null },
