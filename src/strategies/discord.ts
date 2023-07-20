@@ -24,7 +24,7 @@ passport.use(
         clientID: `${process.env.DISCORD_BOT_ID}`,
         clientSecret: `${process.env.DISCORD_BOT_SECRET}`,
         callbackURL: `${process.env.DISCORD_REDIRECT_URI}`,
-        scope: ['identify', 'email', 'guilds', 'guilds.join']
+        scope: ['identify', 'email', 'guilds']
     }, async (
         accessToken: String,
         refreshToken: String,
