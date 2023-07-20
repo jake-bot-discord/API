@@ -8,7 +8,7 @@ router.get('/', passport.authenticate('discord'), (req, res) => {
 })
 
 router.get('/redirect', passport.authenticate('discord'), (req, res) => {
-    res.redirect(`${process.env.DEFAULT_URL}`)
+    res.redirect(`http://localhost:3000`)
 })
 
 

@@ -3,6 +3,7 @@ import { formater } from "../util/formater";
 import { HostTurnOff, HostTurnOn } from "./host";
 import authRouter from "./auth/index"
 import guildsRouter from "./guilds/index"
+import { GetImages } from "../util/getAllImages";
 
 app.get('/', (req, res) => {
     res.status(200)
@@ -33,3 +34,7 @@ app.post('/host/desligar', (req, res) => {
 app.use('/auth', authRouter)
 
 app.use('/guilds', guildsRouter)
+
+app.get('/getImages', (req, res) => {
+    return GetImages(req, res)
+})

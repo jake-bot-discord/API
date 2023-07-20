@@ -39,15 +39,15 @@ app.use(
 
 app.use(passport.initialize())
 app.use(passport.session())
-
+app.use(Express.static('public'))
 discloud.login(process.env.DISCLOUD_API_TOKEN)
 
 try {
     app.listen(process.env.PORT, () => {
         console.clear()
-
+        
         console.log("✔".green, `API online na porta ${process.env.PORT} 🚀`)
-
+                
         //descomentar quando for enviado para a discloud
         discloudVerifier()
             .catch(err => {
