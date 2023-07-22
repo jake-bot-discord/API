@@ -14,13 +14,13 @@ export const apiStatusOn = () => {
             },
 
         )
-        .setThumbnail("https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png")
-        .setFooter({ text: "API Jake-Bot", iconURL: "https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png" })
+        .setThumbnail("https://jakecdn.discloud.app/images/bot/satelite.png")
+        .setFooter({ text: "API Jake-Bot", iconURL: "https://jakecdn.discloud.app/images/bot/satelite.png" })
 
 
     webhookClient.send({
         username: "Monitor - API",
-        avatarURL: "https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png",
+        avatarURL: "https://jakecdn.discloud.app/images/bot/satelite.png",
         embeds: [readyApiEmbed.toJSON()]
     })
 }

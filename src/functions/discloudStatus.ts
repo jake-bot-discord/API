@@ -1,25 +1,18 @@
 import axios from "axios"
+import { discloud } from "discloud.app"
 import { EmbedBuilder, WebhookClient } from "discord.js"
 
 export let hostStatus: any
 
 export async function discloudVerifier() {
     setInterval(async () => {
-        const discloudStatus = await axios.get("https://api.discloud.app/v2/app/1679532864907/status",
-            {
-                headers: {
-                    "api-token": process.env.DISCLOUD_API_TOKEN
-                }
-            }
-        ).catch(() => null)
-
-        hostStatus = discloudStatus
+        const hostStatus = await discloud.apps.status(`${process.env.DISCLOUD_BOT_ID}`)
 
         const webhookClient = new WebhookClient({
             url: `${process.env.STATUSCHAT_WEBHOOK}`
         })
 
-        if (discloudStatus?.data.apps.container == "Online") {
+        if (hostStatus.container == "Online") {
             const statusEmbed = new EmbedBuilder()
                 .setColor("#66cd00")
                 .setTitle("O Jake está online e a todo vapor!")
@@ -31,15 +24,20 @@ export async function discloudVerifier() {
                         inline: true
                     },
                     {
+                        name: "<:JakeRelogio:1027332951932928170> Ultimo reinicio:",
+                        value: `↳ <t:${Math.floor(hostStatus.startedAtTimestamp / 1000)}:R>`,
+                        inline: true
+                    },
+                    {
                         name: "<:JakeDescricao:995541712543957082> Status:",
                         value: `↳ Operante`,
                         inline: true
                     }
                 )
-                .setThumbnail("https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png")
+                .setThumbnail("https://jakecdn.discloud.app/images/bot/satelite.png")
                 .setFooter({
                     text: "Jake Bot",
-                    iconURL: "https://jake-website-ybabyzinha.vercel.app/images/iconJake.png"
+                    iconURL: "https://jakecdn.discloud.app/images/bot/jake-icone.png"
                 })
 
             await webhookClient.editMessage(`${process.env.STATUS_MESSAGE_ID}`, {
@@ -64,10 +62,10 @@ export async function discloudVerifier() {
                         inline: true
                     }
                 )
-                .setThumbnail("https://jake-website-ybabyzinha.vercel.app/images/api/satelite.png")
+                .setThumbnail("https://jakecdn.discloud.app/images/bot/satelite.png")
                 .setFooter({
                     text: "Jake Bot",
-                    iconURL: "https://jake-website-ybabyzinha.vercel.app/images/iconJake.png"
+                    iconURL: "https://jakecdn.discloud.app/images/bot/jake-icone.png"
                 })
 
             await webhookClient.editMessage(`${process.env.STATUS_MESSAGE_ID}`, {
