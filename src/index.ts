@@ -1,6 +1,7 @@
 import { apiStatusOn } from "./functions/apiStatus";
 import { discloudVerifier } from "./functions/discloudStatus";
 import { discloud } from "discloud.app"
+import { globalMiddleWare } from "./util/middleware";
 import passport from "passport"
 import session from "express-session"
 import cors from "cors"
@@ -16,6 +17,7 @@ require("dotenv").config()
 export const app = Express()
 
 app.use(Express.json())
+
 app.use(Express.urlencoded())
 
 app.use(cors({
@@ -38,8 +40,13 @@ app.use(
 )
 
 app.use(passport.initialize())
+
 app.use(passport.session())
+
+app.use(globalMiddleWare)
+
 app.use(Express.static('public'))
+
 discloud.login(process.env.DISCLOUD_API_TOKEN)
 
 try {
