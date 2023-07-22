@@ -23,7 +23,7 @@ passport.use(
     new Strategy({
         clientID: `${process.env.DISCORD_BOT_ID}`,
         clientSecret: `${process.env.DISCORD_BOT_SECRET}`,
-        callbackURL: `${process.env.DISCORD_REDIRECT_URI}`,
+        callbackURL: `${process.env.API_DEFAULT_URL}/auth/redirect`,
         scope: ['identify', 'email', 'guilds']
     }, async (
         accessToken: String,
