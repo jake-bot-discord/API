@@ -34,10 +34,10 @@ export async function discloudVerifier() {
                         inline: true
                     }
                 )
-                .setThumbnail("https://jakecdn.discloud.app/images/bot/satelite.png")
+                .setThumbnail("https://api.jakebot.com.br/images/bot/satelite.png")
                 .setFooter({
                     text: "Jake Bot",
-                    iconURL: "https://jakecdn.discloud.app/images/bot/jake-icone.png"
+                    iconURL: "https://api.jakebot.com.br/images/bot/jake-icone.png"
                 })
 
             await webhookClient.editMessage(`${process.env.STATUS_MESSAGE_ID}`, {
@@ -62,10 +62,10 @@ export async function discloudVerifier() {
                         inline: true
                     }
                 )
-                .setThumbnail("https://jakecdn.discloud.app/images/bot/satelite.png")
+                .setThumbnail("https://api.jakebot.com.br/images/bot/satelite.png")
                 .setFooter({
                     text: "Jake Bot",
-                    iconURL: "https://jakecdn.discloud.app/images/bot/jake-icone.png"
+                    iconURL: "https://api.jakebot.com.br/images/bot/jake-icone.png"
                 })
 
             await webhookClient.editMessage(`${process.env.STATUS_MESSAGE_ID}`, {
