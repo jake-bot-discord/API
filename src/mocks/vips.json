@@ -1,0 +1,97 @@
+{
+    "1": {
+        "id": "1",
+        "name": "Quartzo",
+        "price": 1.99,
+        "stripePricesId": {
+            "0": "price_1OWODjEF8H4i7sXBGJsPeEda",
+            "1": "price_1OWO7OEF8H4i7sXB7PMRtJUU",
+            "2": "price_1OWOAyEF8H4i7sXBwSK54IMq",
+            "3": "price_1OWOAyEF8H4i7sXBu10oDakq"
+        }
+    },
+    
+    "2": {
+        "id": "2",
+        "name": "Ouro",
+        "price": 5.99,
+        "stripePricesId": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": ""
+        }
+    },
+    
+    "3": {
+        "id": "3",
+        "name": "Ametista",
+        "price": 14.99,
+        "stripePricesId": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": ""
+        }
+    },
+    
+    "4": {
+        "id": "4",
+        "name": "Topázio",
+        "price": 23.99,
+        "stripePricesId": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": ""
+        }
+    },
+    
+    "5": {
+        "id": "5",
+        "name": "Esmeralda",
+        "price": 34.90,
+        "stripePricesId": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": ""
+        }
+    },
+    
+    "6": {
+        "id": "6",
+        "name": "Rubi",
+        "price": 54.90,
+        "stripePricesId": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": ""
+        }
+    },
+    
+    "7": {
+        "id": "7",
+        "name": "Diamante",
+        "price": 75.90,
+        "stripePricesId": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": ""
+        }
+    },
+    
+    "8": {
+        "id": "8",
+        "name": "Obsidiana",
+        "price": 99.90,
+        "stripePricesId": {
+            "0": "",
+            "1": "",
+            "2": "",
+            "3": ""
+        }
+    }
+}

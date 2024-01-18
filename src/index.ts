@@ -47,7 +47,7 @@ app.use(globalMiddleWare)
 
 app.use(Express.static('public'))
 
-discloud.login(process.env.DISCLOUD_API_TOKEN)
+discloud.login("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjQ2NjgwODk4MjMzMDI3NzkxMCIsImtleSI6Im1iSnlFZXJMIn0.wQw6VB0RALNm8mlVbhLsn0L-6Ynq9lAdVR3Zkrslrf4")
 
 try {
     app.listen(process.env.PORT, () => {
