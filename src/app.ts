@@ -59,6 +59,11 @@ export const build = (opts = {}) => {
             expires: 1000 * 60 * 60 * 24
         }
     })
+
+    app.register(require("@fastify/cors"), {
+        origin: true,
+        credentials: true
+    })
        
     app.register(common, { prefix: "/common" })
     app.register(auth, {    prefix: "/auth" })

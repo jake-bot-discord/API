@@ -6,10 +6,6 @@ import { PartialUser } from "../../utils/types/user";
 
 const stringPath = z.string()
 
-type Request = FastifyRequest<{
-    Querystring: { code: string },
-}>
-
 export const callback = async (app: FastifyInstance, req: any, rep: FastifyReply) => {
     const { code } = req.query
 
@@ -39,12 +35,10 @@ export const callback = async (app: FastifyInstance, req: any, rep: FastifyReply
 
             const customerData = await customerController(userData.data, data)
 
-            console.log(customerData)
-
             req.session.set("data", customerData)
             req.session.options({maxAge: 1000 * 60 * 60 * 24})
 
-            return rep.status(200).send("Ok")
+            return rep.status(200).redirect(stringPath.parse(process.env.APP_URL))
         } else {
             return rep.status(500).send("Cannot get user data")
         }
