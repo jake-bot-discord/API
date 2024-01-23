@@ -6,3 +6,4 @@
 /discloud.config
 /discloud.env
 /public
+/secret-key
