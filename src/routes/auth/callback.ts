@@ -38,7 +38,7 @@ export const callback = async (app: FastifyInstance, req: any, rep: FastifyReply
             req.session.set("data", customerData)
             req.session.options({maxAge: 1000 * 60 * 60 * 24})
 
-            return rep.redirect(200, stringPath.parse(process.env.APP_URL))
+            return rep.status(301).redirect(stringPath.parse(process.env.APP_URL)).send()
         } else {
             return rep.status(500).send("Cannot get user data")
         }
