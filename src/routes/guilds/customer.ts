@@ -18,7 +18,6 @@ export const customer = async (app: FastifyInstance, req: any, rep: FastifyReply
             return rep.status(500).send("Cannot get bot guilds")
         }
     } catch(err) {
-        console.log(err)
         return rep.status(500).send("Cannot get bot guilds")
     }
 }

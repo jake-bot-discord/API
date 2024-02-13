@@ -5,6 +5,7 @@ import path from "path";
 
 import { common } from "./routes/common";
 import { auth } from "./routes/auth";
+import { guilds } from "./routes/guilds";
 
 const schema = {
     type: 'object',
@@ -64,9 +65,12 @@ export const build = (opts = {}) => {
         origin: true,
         credentials: true
     })
+
+    app.register(require("@fastify/multipart"))
        
     app.register(common, { prefix: "/common" })
     app.register(auth, {    prefix: "/auth" })
+    app.register(guilds, {    prefix: "/guilds" })
 
     return app
 }

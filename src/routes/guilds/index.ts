@@ -6,8 +6,6 @@ import { customer } from "./customer";
 
 export const guilds = (app: FastifyInstance, opts: FastifyPluginOptions, done: () => void) => {
     const sessionMiddleware = async ( req: any, rep: FastifyReply, done: () => void ) => {
-        console.log("middleware")
-
         const session  = req.session.get("data")
 
         if ( session ) {
