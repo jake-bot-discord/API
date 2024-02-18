@@ -4,7 +4,6 @@ import "colors"
 
 require("dotenv").config()
 
-
 const portSchema = z.coerce.number()
 
 const app = build({ logger: false });
