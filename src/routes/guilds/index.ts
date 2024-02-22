@@ -4,6 +4,7 @@ import { bot } from "./bot";
 import { customer } from "./customer";
 import { guild } from "./guild";
 import { sessionMiddleware } from "../../functions/middleware";
+import { addCallback } from "./addCallback";
 
 
 export const guilds = (app: FastifyInstance, opts: FastifyPluginOptions, done: () => void) => {
@@ -17,5 +18,7 @@ export const guilds = (app: FastifyInstance, opts: FastifyPluginOptions, done: (
 
     app.get("/guild", (req: FastifyRequest, rep: FastifyReply) => guild(app, req, rep))
 
+    app.get("/callback", (req: FastifyRequest, rep: FastifyReply) => addCallback(app, req, rep))
+
     done()
-}   
+}
