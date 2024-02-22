@@ -19,11 +19,23 @@ const customerSchema = new mongoose.Schema({
     phone: { type: String, default: null },
     email: { type: String, default: null },
 
+    staff: {
+        member: { type: String, default: false },
+        level: { type: String, default: "0" }
+    },
+
     discord: {
         userId: { type: String, acquired: true },
         userName: { type: String, acquired: true },
         nickName: { type: String, acquired: true },
-        avatar: { type: String, default: null },
+        images: {
+            avatar: { type: String, default: null },
+            banner: { type: String, default: null },
+        },
+        colors: {
+            accentColor: { type: String, default: null },
+            bannerColor: { type: String, default: null }
+        },
         publicFlags: { type: String, default: null },
         premiumType: { type: String, default: null },
         mfaEnable: { type: Boolean, default: false },
@@ -44,6 +56,10 @@ const customerSchema = new mongoose.Schema({
         subscription: {
             id: { type: String, default: null },
         }
+    },
+
+    preferences: {
+        joinSupportGuild: { type: String, default: "show" }
     }
 })
 
