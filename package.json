@@ -32,7 +32,7 @@
     "fastify-cli": "^6.0.1",
     "fs": "^0.0.1-security",
     "mongoose": "^8.1.0",
-    "stripe": "^14.16.0",
+    "stripe": "^14.17.0",
     "zod": "^3.22.4"
   }
 }
