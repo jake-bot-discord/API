@@ -1,7 +1,6 @@
 import { customerModel } from "../database/schemas/customerSchema"
 
 export const customerController = async (userData: any, discordData: any) => {
-    console.log(userData, discordData)
     const updatedUserData = await customerModel.findOneAndUpdate({ _id: userData.id }, {
         $set: {
             "email": userData.email,
