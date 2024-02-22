@@ -20,7 +20,7 @@ const customerSchema = new mongoose.Schema({
     email: { type: String, default: null },
 
     staff: {
-        member: { type: String, default: false },
+        member: { type: Boolean, default: false },
         level: { type: String, default: "0" }
     },
 
