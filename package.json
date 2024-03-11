@@ -6,19 +6,21 @@
   "repository": "https://github.com/biancadcastro/Jake-API",
   "license": "GNU General Public License v3.0",
   "scripts": {
-    "dev": "nodemon ./src/index.ts",
+    "dev": "nodemon ./src/index.ts --resolveJsonModule",
     "run": "node dist",
     "build": "tsc -p tsconfig.json",
     "posinstall": "npm run build",
     "start": "node dist"
   },
   "devDependencies": {
-    "@types/node": "^20.11.5",
-    "nodemon": "^3.0.3",
+    "@types/node": "^20.11.20",
+    "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
+    "typescript": "^5.3.3",
+    "wrangler": "^3.29.0"
   },
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.523.0",
     "@fastify/cookie": "^9.3.1",
     "@fastify/cors": "^8.5.0",
     "@fastify/env": "^4.3.0",
