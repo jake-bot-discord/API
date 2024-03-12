@@ -28,24 +28,32 @@ export const checkout = async (app: FastifyInstance, req: any, rep: FastifyReply
                 quantity: duration
             }],
 
-            client_reference_id: user._id,
-            customer_email: user.email,
+            client_reference_id: "110101010101010",
+            customer_email: "joao778198177e@gmail.com",
             
             allow_promotion_codes: true,
             billing_address_collection: "required",
-            customer_creation: "always",
+            customer_creation: "if_required",
+            invoice_creation: {
+                enabled: true,
+                invoice_data: {
+                    description: `Pagamento ${purchaseMode == "signature" ? "mensal" : "unico"} do plano ${selectedVip[1].name}`,
+                    footer: "Planos - Jake Bot"
+                }
+            },
+
             phone_number_collection: {
                 enabled: true
             },
+
             submit_type: "auto",
-            
 
             consent_collection: {
                 terms_of_service: "required",
             },
             mode: purchaseMode == "signature" ? "subscription" : "payment",
 
-            success_url: `${process.env.BASE_URL}/payments/success?session_id={CHECKOUT_SESSION_ID}&discordId=${user._id}`,
+            success_url: `${process.env.BASE_URL}/payments/success?session_id={CHECKOUT_SESSION_ID}&discordId=${user._id}&vip=${selectedVipId}&type=${purchaseMode == "signature" ? "subscription" : "payment"}`,
             cancel_url: `${process.env.APP_URL}/planos`
         })
 

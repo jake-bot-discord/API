@@ -15,8 +15,7 @@ const transactionSchema = new mongoose.Schema({
     createdAt: { type: String, acquired: true },
     updatedAt: { type: String, acquired: true },
     status: { type: String, acquired: true },
-    product: { type: String, acquired: true },
-    purchaseType: { type: String, acquired: true },
+    price: { type: String, acquired: true}
 })
 
 const customerSchema = new mongoose.Schema({
