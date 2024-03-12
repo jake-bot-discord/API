@@ -19,6 +19,6 @@ export const guild = async (app: FastifyInstance, req: any, rep: FastifyReply) =
         return rep.status(200).send({database: guildData, discord: guildRes})
     } catch(err) {
         console.log(err)
-        return rep.status(500).send("Cannot get guild data")
+        return rep.status(500).send(err)
     }
 }
