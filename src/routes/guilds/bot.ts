@@ -1,5 +1,5 @@
 import axios from "axios";
-import { FastifyInstance, FastifyReply, FastifyRequest } from "fastify";
+import { FastifyInstance, FastifyReply, FastifyRequest, errorCodes } from "fastify";
 import { PartialGuild } from "../../utils/types/guild";
 
 export const bot = async (app: FastifyInstance, req: any, rep: FastifyReply) => {
@@ -16,6 +16,7 @@ export const bot = async (app: FastifyInstance, req: any, rep: FastifyReply) => 
             return rep.status(500).send("Cannot get bot guilds")
         }
     } catch(err) {
-        return rep.status(500).send("Cannot get bot guilds")
+        console.log(err)
+        return rep.status(500).send(err)
     }
 }
