@@ -11,8 +11,6 @@ export const subscription = async (app: FastifyInstance, req: any, rep: FastifyR
 
     try {
         const { updatedUserData: userData } = req.session.get("data")
-
-        console.log(userData)
         
         return rep.status(200).send(userData.subscription)
     } catch (err) {

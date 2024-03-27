@@ -31,9 +31,6 @@ export const invoices = async (app: FastifyInstance, req: any, rep: FastifyReply
             })
         }
 
-
-        console.log(invoices)
-
         return rep.status(200).send(invoices)
     } catch (err) {
         return rep.status(504).send(err)
