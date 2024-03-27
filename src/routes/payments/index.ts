@@ -2,12 +2,14 @@ import { FastifyInstance, FastifyPluginOptions, FastifyReply, FastifyRequest } f
 import { checkout } from "./checkout";
 import { success } from "./success";
 import { webhooks } from "./webhooks";
+import { retrieve } from "./retrieve";
 
 export const payments = (app: FastifyInstance, opts: FastifyPluginOptions, done: () => void) => {
     app.get("/checkout", (req: FastifyRequest, rep: FastifyReply) => checkout(app, req, rep))
     app.get("/success", (req: FastifyRequest, rep: FastifyReply) => success(app, req, rep))
     
     app.register(webhooks, { prefix: "/webhooks"})
+    app.register(retrieve, { prefix: "/retrieve"})
     
     done()
 }
