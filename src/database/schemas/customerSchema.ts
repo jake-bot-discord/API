@@ -51,15 +51,13 @@ const customerSchema = new mongoose.Schema({
         refreshToken: { type: String, default: null }
     },
 
-    paymentsData: {
-        address: {
-            country: { type: String, default: null },
-            state: { type: String, default: null },
-            city: { type: String, default: null },
-            zipCode: { type: String, default: null },
-            addressLine_1: { type: String, default: null },
-            addressLine_2: { type: String, default: null },
-        },
+    address: {
+        country: { type: String, default: null },
+        state: { type: String, default: null },
+        city: { type: String, default: null },
+        zipCode: { type: String, default: null },
+        addressLine_1: { type: String, default: null },
+        addressLine_2: { type: String, default: null },
     },
 
     preferences: {
@@ -67,12 +65,11 @@ const customerSchema = new mongoose.Schema({
     },
 
     subscription: {
-        active: { type: Boolean, default: false },
+        active: { type: String, default: "0" },
         ID: { type: String, default: null },
-        expires_at: { type: String, default: null }
+        expires_at: { type: String, default: null },
+        vipType: { type: String, default: null }
     },
-
-    billing: { type: Array, items: transactionSchema, uniqueItems: true }
 })
 
 export const customerModel = mongoose.model("customers", customerSchema)
