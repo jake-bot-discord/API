@@ -7,7 +7,6 @@ import { common } from "./routes/common";
 import { auth } from "./routes/auth";
 import { guilds } from "./routes/guilds";
 import { payments } from "./routes/payments";
-import { users } from "./routes/users";
 
 const schema = {
     type: 'object',
@@ -74,7 +73,6 @@ export const build = (opts = {}) => {
     app.register(auth, { prefix: "/auth" })
     app.register(guilds, { prefix: "/guilds" })
     app.register(payments, { prefix: "/payments" })
-    app.register(users, { prefix: "/users"})
 
     return app
 }
