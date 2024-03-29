@@ -2,6 +2,7 @@ import { FastifyInstance, FastifyReply } from "fastify";
 import stripe from "stripe"
 import { z } from "zod";
 import { InvoiceType } from "../../../utils/types/invoices";
+import { customerModel } from "../../../database/schemas/customerSchema";
 const stringPath = z.string()
 
 export const subscription = async (app: FastifyInstance, req: any, rep: FastifyReply) => {
@@ -10,9 +11,15 @@ export const subscription = async (app: FastifyInstance, req: any, rep: FastifyR
     })
 
     try {
-        const { updatedUserData: userData } = req.session.get("data")
+        const { updatedUserData: sessionData } = req.session.get("data")
         
-        return rep.status(200).send(userData.subscription)
+        const user = await customerModel.findById({_id: sessionData._id})
+
+        if( user ) {
+            return rep.status(200).send(user.subscription)
+        } else {
+            return rep.status(504).send("Cannot find customer")
+        }
     } catch (err) {
         return rep.status(504).send(err)
     }
